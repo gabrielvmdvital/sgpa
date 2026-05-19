@@ -66,6 +66,7 @@ def create_lesson_plan():
     except ValidationError as e:
         logger.warning(f'Validation error creating lesson plan: {e.errors()}')
         return jsonify({"errors": e.errors()}), 400
+        
     except Exception as e:
         db.session.rollback()
         logger.error(f'Error creating lesson plan: {str(e)}')
@@ -94,15 +95,13 @@ def get_lesson_plans():
     page = request.args.get('page', 1, type=int)
     per_page = request.args.get('per_page', 10, type=int)
     
-    # Parâmetros de Filtro e Busca
     subject = request.args.get('subject')
     tags = request.args.get('tags')
     scheduled_date = request.args.get('scheduled_date')
     search_title = request.args.get('title')
     
-    # Parâmetros de Ordenação
-    sort_by = request.args.get('sort_by', 'created_at') # title ou created_at
-    sort_order = request.args.get('sort_order', 'desc') # asc ou desc
+    sort_by = request.args.get('sort_by', 'created_at') 
+    sort_order = request.args.get('sort_order', 'desc')
 
     query = db.select(LessonPlan)
     
@@ -116,7 +115,7 @@ def get_lesson_plans():
             parsed_date = datetime.strptime(scheduled_date, '%Y-%m-%d').date()
             query = query.where(LessonPlan.scheduled_date == parsed_date)
         except ValueError:
-            pass # Ignora se a data estiver num formato inválido
+            pass
             
     if search_title:
         query = query.where(LessonPlan.title.ilike(f'%{search_title}%'))
