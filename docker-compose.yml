@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: sgpa_backend
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=sqlite:////app/instance/sgpa.db
+      - LLM_API_KEY=${LLM_API_KEY}
+    volumes:
+      - ./backend/instance:/app/instance
