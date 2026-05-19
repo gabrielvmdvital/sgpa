@@ -13,3 +13,10 @@ dependencies = [
     "pydantic>=2.7.1",
     "python-dotenv>=1.0.1",
 ]
+
+[dependency-groups]
+dev = [
+    "black>=24.0.0",
+    "flake8>=7.0.0",
+    "pytest>=8.0.0",
+]

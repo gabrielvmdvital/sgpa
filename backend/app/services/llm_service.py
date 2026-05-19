@@ -7,6 +7,10 @@ from openai import OpenAI
 logger = logging.getLogger(__name__)
 
 class LLMService:
+    """
+    Serviço encapsulado para interação com APIs de Modelos de Linguagem (LLM),
+    atuando como Assistente Pedagógico.
+    """
     def __init__(self, model="gemini-2.5-flash"):
         self.api_key = os.environ.get("LLM_API_KEY")
         self.base_url = os.environ.get("LLM_BASE_URL")
@@ -22,6 +26,10 @@ class LLMService:
             logger.warning("Chave de API LLM não configurada ou inválida. LLMService operará em modo mock.")
 
     def generate_lesson_recommendations(self, title: str, subject: str, summary: str) -> dict:
+        """
+        Gera recomendações de conteúdo complementar, tópicos e tags usando IA,
+        com base no título, disciplina e ementa do plano de aula.
+        """
         if not self.client:
             return {
                 "suggested_content": "1. Introdução Teórica Avançada\n2. Dinâmica de Grupo\n3. Exercícios de Fixação",

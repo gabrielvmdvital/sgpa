@@ -3,6 +3,7 @@ from typing import Optional
 from datetime import date, datetime
 
 class LessonPlanCreate(BaseModel):
+    """Schema Pydantic para validação de dados de criação de um Plano de Aula."""
     title: str = Field(..., min_length=3, max_length=200, description="Título da Aula")
     objective: str = Field(..., min_length=5, description="Objetivo da Aula")
     summary: str = Field(..., min_length=5, description="Ementa ou Resumo")
@@ -13,6 +14,7 @@ class LessonPlanCreate(BaseModel):
     tags: Optional[str] = Field(None, description="Tags")
 
 class LessonPlanUpdate(BaseModel):
+    """Schema Pydantic para validação de dados de atualização de um Plano de Aula."""
     title: Optional[str] = Field(None, min_length=3, max_length=200)
     objective: Optional[str] = Field(None, min_length=5)
     summary: Optional[str] = Field(None, min_length=5)
@@ -23,6 +25,7 @@ class LessonPlanUpdate(BaseModel):
     tags: Optional[str] = None
 
 class LessonPlanResponse(BaseModel):
+    """Schema Pydantic para serialização de resposta de um Plano de Aula."""
     id: int
     title: str
     objective: str

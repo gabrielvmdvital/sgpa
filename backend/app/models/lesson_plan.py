@@ -6,6 +6,9 @@ from sqlalchemy.sql import func
 from app import db
 
 class LessonPlan(MappedAsDataclass, db.Model):
+    """
+    Modelo SQLAlchemy representando um plano de aula no banco de dados.
+    """
     __tablename__ = 'lesson_plans'
     
     id: Mapped[int] = mapped_column(primary_key=True, init=False)
