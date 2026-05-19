@@ -1,0 +1,43 @@
+name: SGPA - Backend CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: ./backend
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.12"
+        
+    - name: Install uv
+      run: curl -LsSf https://astral.sh/uv/install.sh | sh
+      
+    - name: Install dependencies
+      run: |
+        uv venv
+        uv sync
+        
+    - name: Lint with black
+      run: |
+        uv run black --check app tests || echo "Black found formatting issues."
+        
+    - name: Lint with flake8
+      run: |
+        uv run flake8 app tests --max-line-length=120 --ignore=E501,F401 || echo "Flake8 found issues."
+        
+    - name: Run tests with pytest
+      run: |
+        uv run pytest tests/
