@@ -2,6 +2,12 @@
 
 O SGPA (Sistema de Gerenciamento de Planos de Aula) é uma plataforma web completa desenvolvida para auxiliar educadores e instituições no planejamento, estruturação, busca e otimização de planos de ensino e planos de aula. O sistema foi concebido com uma arquitetura moderna que une robustez no tratamento de dados a uma interface visualmente rica e fluida, incluindo recursos de inteligência artificial (Smart Assist) para complementação automática e enriquecimento pedagógico.
 
+### 🎥 Vídeo de Apresentação
+
+Para ver o sistema em funcionamento e compreender a experiência de uso premium, assista ao nosso vídeo demonstrativo:
+
+[Assistir ao Vídeo de Apresentação do Projeto](https://drive.google.com/file/d/1UOgmn86BndcIt4DmBCAP79Yfkzb6TMb1/view?usp=sharing)
+
 ---
 
 ## Funcionalidades do Sistema
