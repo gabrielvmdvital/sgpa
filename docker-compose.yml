@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   backend:
     build:
@@ -13,3 +11,16 @@ services:
       - LLM_API_KEY=${LLM_API_KEY}
     volumes:
       - ./backend/instance:/app/instance
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: sgpa_frontend
+    restart: always
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
