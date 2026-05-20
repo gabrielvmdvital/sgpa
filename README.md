@@ -4,7 +4,7 @@ O SGPA (Sistema de Gerenciamento de Planos de Aula) é uma plataforma web comple
 
 ### 🎥 Vídeo de Apresentação
 
-Para ver o sistema em funcionamento e compreender a experiência de uso premium, assista ao nosso vídeo demonstrativo:
+Vídeo demonstrativo:
 
 [Assistir ao Vídeo de Apresentação do Projeto](https://drive.google.com/file/d/1UOgmn86BndcIt4DmBCAP79Yfkzb6TMb1/view?usp=sharing)
 
