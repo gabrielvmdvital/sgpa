@@ -70,7 +70,7 @@ sgpa/
 │   ├── package.json        # Arquivo de definicao e dependencias npm
 │   └── README.md           # Documentacao especifica do modulo frontend
 ├── docker-compose.yml      # Arquivo de orquestracao geral para rodar todo o sistema com um comando
-├── REQUISITOS.md           # Documento de especificacoes funcionais do sistema
+├── REQUISITOS.pdf          # Documento de especificacoes funcionais do sistema
 ├── backend_requisitos.md   # Especificacoes do crud e integracoes do backend
 ├── frontend_requisitos.md  # Especificacoes detalhadas de interface e fluxo do frontend
 ├── LICENSE                 # Arquivo de licenca do projeto
